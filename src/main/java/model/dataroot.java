@@ -8,22 +8,16 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import java.util.List;
 
-@XmlRootElement(name = "entitats")
+@XmlRootElement(name = "dataroot")
 @XmlAccessorType(XmlAccessType.FIELD)
 @Data
 public class dataroot  {
-
-    @XmlElement(name = "dataroot")
-    private List<dataroot> llistadataroot;
-
-    public List<dataroot> getLlistadataroot() {
-        return llistadataroot;
-    }
-
-    @XmlElement(name = "Sessions")
+    private Sessions sessions;
+    @XmlElement(name = "SESSIONS")
     private List<Sessions> llistaSessions;
 
     public List<Sessions> getLlistaSessions() {
         return llistaSessions;
     }
+
 }

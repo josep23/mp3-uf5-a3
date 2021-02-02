@@ -1,6 +1,5 @@
 import model.Sessions;
 import model.dataroot;
-
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
@@ -23,6 +22,7 @@ public class App {
         do{
             System.out.println("Que quieres hacer?");
             System.out.println("-------------------------------------------------------------------------------------------");
+            System.out.println("0  Salir");
             System.out.println("1  Buscar titulo");
             System.out.println("2  Ordenar por id de cine");
             System.out.println("3  Filtra por id");
@@ -30,11 +30,14 @@ public class App {
             System.out.println("5  Ordenar por orden de sesion");
             System.out.println("6  Ordenar por precio");
             System.out.println("7  Ordenar Por fecha");
-            System.out.println("0  Salir");
             System.out.println("-------------------------------------------------------------------------------------------");
 
             Respuesta2 = Respuesta.nextInt();
             switch (Respuesta2) {
+                case 0:
+                    System.out.println("Salir");
+                    bucle = false;
+                    break;
                 case 1:
                     System.out.println("1");
                     System.out.println("Que titulo buscas");
@@ -73,10 +76,7 @@ public class App {
                     System.out.println("7");
                     dataroot.getLlistaSessions().stream().sorted(Comparator.comparing(Sessions::getSes_data)).forEach(System.out::println);
                     break;
-                case 0:
-                    System.out.println("Salir");
-                    bucle = false;
-                    break;
+
                 default:
                     System.out.println("Error");
                     break;
